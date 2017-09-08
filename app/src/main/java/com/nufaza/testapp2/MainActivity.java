@@ -21,7 +21,15 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    // Ini temporary storage untuk listView.
+    List<String> listNama = new ArrayList<>(); // Harus diinisialisasi
+
+    // Ini listview diset sebagai class variable agar accessible anywhere
+    ListView listViewNama = null;  // Inisialisasi di onCreate
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -31,12 +39,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText ed = (EditText) findViewById(R.id.textEditor);
         Button btn = (Button) findViewById(R.id.btnGanti);
 
-        // Ini temporary storage untuk listView.
-        List<String> listNama = new ArrayList<>(); // Harus diinisialisasi
-
-        // Ini listview diset sebagai class variable agar accessible anywhere
-        ListView listViewNama = null;  // Inisialisasi di onCreate
-
+        listViewNama = (ListView) findViewById(R.id.listViewNama);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
